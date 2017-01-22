@@ -22,8 +22,15 @@ def tweetProb(df):
         if len(tweet)>80:
 		tweet += tweetend
 	        print "Tweet Sent:\n%s" % (str(tweet))
-	        #t.statuses.update(status=tweet)
+	        t.statuses.update(status=tweet)
 		tweet = tweetstart
+
+    if len(tweet)>len(tweetstart):
+	tweet += tweetend
+	print "Tweet Sent:\n%s" % (str(tweet))
+	t.statuses.update(status=tweet)
+
+
     
 
 def store_predictions(df,pred):
@@ -43,7 +50,7 @@ def store_predictions(df,pred):
         # check if this date is already in there    
         # the max of a datetime column is a timestamp object.
         if datetime.datetime.strptime(str(prev['date'].max())[:10],"%Y-%m-%d").date()<datetime.datetime.today().date():
-            df.to_csv(fil, header=True, index=False,mode='a')
+            df.to_csv(fil, header=False, index=False,mode='a')
     else:        
         df.to_csv(fil, header=True, index=False)
 

@@ -201,18 +201,17 @@ if __name__ == '__main__':
     df = readRawFiles()
     X, X_scaled, Y, scaler,X_fix = processData(df)
     model_lr = buildLogisticModel(X_scaled,Y,X_fix,optimize=False)
-    y_probs_lr = predict(X_scaled,model_lr)
-    
-    model_rf = buildRandomForest(X_scaled,Y,X_fix)
-    y_probs_rf = predict(X_scaled,model_rf)
+    #y_probs_lr = predict(X_scaled,model_lr)
 
-    # evaluate with plots for bloggering (plots.py)
-    #(i had them here in functions, but rodeo doesn't seem to plot them)
-
-    # pull in data for prediction
+    ##########
+    # pull in data for predictions
     df_predict = readRawPredictionFile()
     df = addrows(df,df_predict)
     X, X_scaled, Y, scaler,X_fix = processData(df,scaler)
     y_probs_lr = predict(X_scaled,model_lr)
     new_df = extract_new_predictions(df,y_probs_lr)
-    
+
+    #model_rf = buildRandomForest(X_scaled,Y,X_fix)
+    #y_probs_rf = predict(X_scaled,model_rf)
+
+
