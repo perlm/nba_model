@@ -41,15 +41,16 @@ def store_predictions(df,pred):
         prev['date'] = pd.to_datetime(prev['date'])
         
         # check if this date is already in there    
-        if max(prev['date'])<datetime.date.today():
-            df.to_csv(fil, header=False, index=False,mode='a')
+        # the max of a datetime column is a timestamp object.
+        if datetime.datetime.strptime(str(prev['date'].max())[:10],"%Y-%m-%d").date()<datetime.datetime.today().date():
+            df.to_csv(fil, header=True, index=False,mode='a')
     else:        
-        df.to_csv(fil, header=False, index=False)
+        df.to_csv(fil, header=True, index=False)
 
 
 
 if __name__ == '__main__':
 	tweetProb(new_df)
-
+	store_predictions(df,y_probs_lr)
 
 

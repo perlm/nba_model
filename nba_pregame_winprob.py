@@ -16,7 +16,7 @@ def main():
 	###############
 	# scrape data!
 	#get_all_data_for_modeling()	# if starting from scratch
-	get_new_data_for_modeling()	# if want all available training data
+	#get_new_data_for_modeling()	# if want all available training data
 	get_data_for_predicting()	# necessary
 
 	###############

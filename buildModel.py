@@ -189,12 +189,12 @@ def extract_new_predictions(df,y_probs):
     ##################3
     df['prediction'] = y_probs
     df['date'] = pd.to_datetime(df['date'])
-    df = df.loc[(df['date']==datetime.date.today())]
+    #df = df.loc[(df['date']==datetime.date.today())]
     df['away'] = df.away_team.str.split().str.get(-1)
     df['home'] = df.home_team.str.split().str.get(-1)
     df['prediction'] = pd.Series(["{0:.0f}%".format(prediction * 100) for prediction in df['prediction']], index = df.index)
 
-    return df[['away','home','prediction']]
+    return df[['away','home','prediction']].loc[(df['date']==datetime.date.today())]
     
     
 if __name__ == '__main__':
