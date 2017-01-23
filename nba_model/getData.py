@@ -1,9 +1,7 @@
 from bs4 import BeautifulSoup
-import requests, sys, time, re,datetime
+import requests, sys, time, re,datetime, os
 import numpy as np
 import pandas as pd
-
-# some code taken from https://github.com/danielfrg/nba/tree/master/src
 
 #####
 # The objective of this script is to scrape NBA data so I can make a predictive model!
@@ -202,7 +200,7 @@ def get_all_data_for_modeling():
     #for year in xrange(2007,2018):
     for year in xrange(2017,2018):
         df = getGames(year)
-        df.to_csv('data/games_{0}.csv'.format(year), index=False)
+        df.to_csv('{0}/nba_model/data/games_{1}.csv'.format(os.path.expanduser("~"),year), index=False)
 
 def get_new_data_for_modeling():
     ####################
@@ -213,11 +211,11 @@ def get_new_data_for_modeling():
     
     year=2017
     df = getGames(year)
-    df.to_csv('data/games_{0}.csv'.format(year), index=False)
+    df.to_csv('{0}/nba_model/data/games_{1}.csv'.format(os.path.expanduser("~"),year), index=False)
 
 def get_data_for_predicting():
     df = getGames(2017,predicting=True)
-    df.to_csv('data/predict_games.csv', index=False)
+    df.to_csv('{0}/nba_model/data/predict_games.csv'.format(os.path.expanduser("~")), index=False)
 
 if __name__ == '__main__':
     get_new_data_for_modeling()

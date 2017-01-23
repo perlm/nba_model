@@ -9,7 +9,7 @@ def tweetProb(df):
     # need to split this into multiple tweets
     
     config = ConfigParser.ConfigParser()
-    config.read('/home/jason/.python_keys.conf')
+    config.read('{}/.python_keys.conf'.format(os.path.expanduser("~")))
     t = twitter.Twitter(auth=twitter.OAuth(token=config.get('twitter','token'), token_secret=config.get('twitter','token_secret'), consumer_key=config.get('twitter','consumer_key'), consumer_secret=config.get('twitter','consumer_secret')))
     
     tweetstart = '#NBA home team win probs:\n'
@@ -22,13 +22,13 @@ def tweetProb(df):
         if len(tweet)>80:
 		tweet += tweetend
 	        print "Tweet Sent:\n%s" % (str(tweet))
-	        t.statuses.update(status=tweet)
+	        #t.statuses.update(status=tweet)
 		tweet = tweetstart
 
     if len(tweet)>len(tweetstart):
 	tweet += tweetend
 	print "Tweet Sent:\n%s" % (str(tweet))
-	t.statuses.update(status=tweet)
+	#t.statuses.update(status=tweet)
 
 
     
@@ -37,7 +37,7 @@ def store_predictions(df,pred):
     ####
     # store predictions for future evaluation!
     ######
-    fil = 'data/predictions.csv'
+    fil = '{}/nba_model/data/predictions.csv'.format(os.path.expanduser("~"))
     
     df['date'] = pd.to_datetime(df['date'])
     df['prediction'] = pred

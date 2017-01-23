@@ -9,9 +9,10 @@
 from getData import *
 from buildModel import *
 from tweetIt import *
-import datetime
+import datetime, os
 
 def main():
+	if not os.path.isdir('{}/nba_model/data/'.format(os.path.expanduser("~"))):os.makedirs('{}/nba_model/data'.format(os.path.expanduser("~")))
 
 	###############
 	# scrape data!
@@ -40,7 +41,6 @@ def main():
 	if len(new_df)>0:
 		tweetProb(new_df)
 		store_predictions(df,y_probs_lr)
-
 
 
 if __name__ == "__main__":
