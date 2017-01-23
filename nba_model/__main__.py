@@ -1,6 +1,6 @@
-from getData import *
-from buildModel import *
-from tweetIt import *
+from .getData import *
+from .buildModel import *
+from .tweetIt import *
 import datetime, os
 
 
