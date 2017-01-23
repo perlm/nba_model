@@ -1,8 +1,9 @@
-#!/usr/bin/python
-
 import ConfigParser, datetime, twitter, sys, os
 import pandas as pd
 
+#############
+# "productionize" the code by tweeting daily!
+#######
 
 def tweetProb(df):
     #####################################

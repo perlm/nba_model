@@ -1,3 +1,8 @@
+###
+# code to make some plots
+# used to investigate model performance
+##
+
 from ggplot import *
 import pandas as pd
 

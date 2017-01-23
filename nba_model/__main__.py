@@ -1,4 +1,8 @@
-#!/usr/bin/python
+from getData import *
+from buildModel import *
+from tweetIt import *
+import datetime, os
+
 
 ##
 # This is the master script which will call functions from the other scripts.
@@ -6,10 +10,6 @@
 # will set to run on cron.
 ## 
 
-from getData import *
-from buildModel import *
-from tweetIt import *
-import datetime, os
 
 def main():
 	if not os.path.isdir('{}/nba_model/data/'.format(os.path.expanduser("~"))):os.makedirs('{}/nba_model/data'.format(os.path.expanduser("~")))
