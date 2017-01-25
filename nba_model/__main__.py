@@ -1,6 +1,7 @@
 from .getData import *
 from .buildModel import *
 from .tweetIt import *
+from .validation import *
 import datetime, os
 
 
@@ -25,7 +26,6 @@ def main():
 	df = readRawFiles()
 	X, X_scaled, Y, scaler,X_fix = processData(df)
 	model_lr = buildLogisticModel(X_scaled,Y,X_fix,optimize=False)
-	#y_probs_lr = predict(X_scaled,model_lr)
 
 	##########
 	# pull in data for predictions
@@ -35,12 +35,15 @@ def main():
 	y_probs_lr = predict(X_scaled,model_lr)
 	new_df = extract_new_predictions(df,y_probs_lr)
 
-
+	##########
 	# tweet it!
-	# check length?
 	if len(new_df)>0:
 		tweetProb(new_df)
 		store_predictions(df,y_probs_lr)
+
+	##########
+	# validate previous predictions!
+	validate()
 
 
 if __name__ == "__main__":
