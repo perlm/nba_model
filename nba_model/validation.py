@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn import metrics
 from ggplot import *
+import os
 
 #################
 # validate! - go through past predictions and see how they're performing!
