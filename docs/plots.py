@@ -100,3 +100,20 @@ ylab('Classification Accuracy')+ggtitle('Classification Accuracy by month for NB
 geom_point(size=100) 
 
 #data doesn't imply change in accuracy over time.
+
+
+#plot distance!
+# not interesting!
+
+forplot = df.round({'distance': -3})
+forplot2 = forplot['winner'].groupby(forplot['distance']).mean()
+forplot3 = forplot2.reset_index()
+
+ggplot(forplot3,aes(x="distance",y="winner")) + \
+geom_point(size=100) +\
+xlab('Distance (km)') + \
+ylab('Home Team Win Frequency')+ggtitle('Effect of travel distance on NBA win frequency') +\
+scale_y_continuous(limits=[0.5,0.7]) 
+
++ stat_smooth(method='linear')
+
