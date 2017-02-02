@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='nba_model',
-	version='0.1.0',
+	version='0.1.1',
 	description="NBA pregame prediction model", 
 	packages=['nba_model'],
 	install_requires=['numpy','pandas','sklearn','twitter'],
