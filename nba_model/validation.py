@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.dates as mdates
 
-
 import pandas as pd
 import numpy as np
 from sklearn import metrics
@@ -40,11 +39,14 @@ def validate():
 	df = df.round({'prediction': 1})
 	forcalibration = df['winner_y'].groupby(df['prediction']).mean().reset_index()
 	
-	plot1=plt.figure(figsize=(7, 5))
-	plt.plot(forcalibration['prediction'],forcalibration['winner_y'])
+	plot1, ax =plt.subplots(figsize=(7, 5))
+	plt.plot(forcalibration['prediction'],forcalibration['winner_y'],marker='o', linestyle='-', color='b')
 	plt.ylabel('Actual Win Frequency')
 	plt.xlabel('Predicted Win Probability')
 	plt.title('NBA Prediction Validation.\nDate:{0} Samples:{1}\nAUC:{2} ACC:{3}'.format(maxDate,preds,round(auc,2),round(accuracy,2)))
+
+	plt.plot(np.array([0,1]),np.array([0,1]),linestyle='-',color='k')
+
 	#plt.show()
 	pdf.savefig(plot1)
 	plt.close()
@@ -76,7 +78,7 @@ def validate():
 	#ggtitle('NBA model validation by day')
     
 	plot2, ax =plt.subplots(figsize=(7, 5))
-	plt.plot(forplot2['date'],forplot2['correct'])
+	plt.plot(forplot2['date'],forplot2['correct'],marker='o', linestyle='-', color='b')
 	
 	days = mdates.DayLocator()
 	ax.xaxis.set_major_locator(days)
