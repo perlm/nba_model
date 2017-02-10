@@ -294,8 +294,8 @@ if __name__ == '__main__':
     df = readRawFiles()
     X, X_scaled, Y, scaler,X_fix = processData(df)
     model_lr = buildLogisticModel(X_scaled,Y,X_fix,optimize=False)
-    #y_probs_lr = predict(X_scaled,model_lr)
-    model_rf = buildRandomForest(X_scaled,Y,X_fix)
+    y_probs_lr = predict(X_scaled,model_lr)
+    #model_rf = buildRandomForest(X_scaled,Y,X_fix)
 
 
     ##########

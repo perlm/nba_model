@@ -107,6 +107,9 @@ def create_features(df):
         a['winrateAfter'] = a['win'].expanding(min_periods=1).mean()
         a['winrate'] = a['winrateAfter'].shift(1)
         
+        # prior game is OT
+        a['afterOT']  = a['overtime'].shift(1)/1.0
+        
         # cumulative wins/game recent
         a['win1']  = a['win'].shift(1)/1.0
         a['win3']  = (a['win'].shift(1)+a['win'].shift(2)+a['win'].shift(3))/3.0
@@ -115,11 +118,11 @@ def create_features(df):
     
         ## Now join back to df! - use original indexing!
         b = a.loc[(a['away_team'] == t)]
-        b = b[['game_count','daysoff','cumpointdiff','winrate','win1','win3','win5','win10']]
-        b.columns = ['game_count_away','daysoff_away','cumpointdiff_away','winrate_away','win1_away','win3_away','win5_away','win10_away']
+        b = b[['game_count','daysoff','cumpointdiff','winrate','win1','win3','win5','win10','afterOT']]
+        b.columns = ['game_count_away','daysoff_away','cumpointdiff_away','winrate_away','win1_away','win3_away','win5_away','win10_away','afterOT_away']
         c = a.loc[(a['home_team'] == t)]
-        c = c[['game_count','daysoff','cumpointdiff','winrate','win1','win3','win5','win10']]
-        c.columns = ['game_count_home','daysoff_home','cumpointdiff_home','winrate_home','win1_home','win3_home','win5_home','win10_home']
+        c = c[['game_count','daysoff','cumpointdiff','winrate','win1','win3','win5','win10','afterOT']]
+        c.columns = ['game_count_home','daysoff_home','cumpointdiff_home','winrate_home','win1_home','win3_home','win5_home','win10_home','afterOT_home']
 		
 	# to avoid creating duplicate column names
 	if iii==0:
@@ -172,7 +175,14 @@ def parse_games(r):
         else:
             home_points.append(int(entry.text))
 
-    assert (len(set([len(dates),len(times),len(away_teams),len(away_points),len(home_teams),len(home_points)])) == 1), 'varying number of game inputs!'
+    ots = []
+    for entry in r.find_all("td", { "data-stat":"overtimes" }):
+        if entry.text=='':
+            ots.append(int(0))
+        else:
+            ots.append(int(1.0))
+
+    assert (len(set([len(dates),len(times),len(away_teams),len(away_points),len(home_teams),len(home_points),len(ots)])) == 1), 'varying number of game inputs!'
 
     df = pd.DataFrame(
         {'date': dates,
@@ -180,7 +190,8 @@ def parse_games(r):
          'away_team': away_teams,
          'away_points': away_points,
          'home_team': home_teams,
-         'home_points': home_points
+         'home_points': home_points,
+         'overtime' : ots
     })
     
     
@@ -196,9 +207,7 @@ def get_all_data_for_modeling():
     # scrapes, manipulated df, and then writes to csv.
     #################
     
-    # no need to run previous years. can run 2017 to update with additional modeling data.
-    #for year in xrange(2007,2018):
-    for year in xrange(2017,2018):
+    for year in xrange(2007,2018):
         df = getGames(year)
         df.to_csv('{0}/nba_model/data/games_{1}.csv'.format(os.path.expanduser("~"),year), index=False)
 
@@ -218,6 +227,7 @@ def get_data_for_predicting():
     df.to_csv('{0}/nba_model/data/predict_games.csv'.format(os.path.expanduser("~")), index=False)
 
 if __name__ == '__main__':
+    get_all_data_for_modeling()
     get_new_data_for_modeling()
     get_data_for_predicting()
 

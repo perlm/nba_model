@@ -117,3 +117,38 @@ scale_y_continuous(limits=[0.5,0.7])
 
 + stat_smooth(method='linear')
 
+
+#################
+# plot overtime!
+#############33
+
+df['prediction'] = y_probs_lr
+forplot = df.round({'prediction': 2})
+forplot2 = forplot['overtime'].groupby(forplot['prediction']).mean()
+forplot3 = forplot2.reset_index()
+
+ggplot(forplot3,aes(x="prediction",y="overtime")) + \
+geom_point(size=100) +\
+xlab('Predicted Home Win Probability') + \
+ylab('Overtime Frequency')+ggtitle('Relationship between NBA win probability and OT') +\
+scale_y_continuous(limits=[0.,0.2])+scale_x_continuous(limits=[0.,1.]) 
+
+
+df['prediction'] = y_probs_lr
+ggplot(df,aes(x="prediction",y="overtime")) + \
+xlab('Predicted Home Win Probability') + \
+ylab('Overtime Frequency')+ggtitle('Relationship between NBA win probability and OT') +\
+scale_y_continuous(limits=[0.,0.2])+scale_x_continuous(limits=[0.,1.]) + \
+stat_smooth(method='loess',se=False)
+
+# try it in R
+df[['prediction','overtime']].to_csv('/home/jason/temp.csv', index=False)
+
+
+
+
+
+
+
+
+
