@@ -51,10 +51,9 @@ def store_predictions(df,pred):
         # check if this date is already in there    
         # the max of a datetime column is a timestamp object.
         if datetime.datetime.strptime(str(prev['date'].max())[:10],"%Y-%m-%d").date()<datetime.datetime.today().date():
-            df.to_csv(fil, header=False, index=False,mode='a')
+            df[['date','winner','home_team','away_team','prediction','away','home']].to_csv(fil, header=False, index=False,mode='a')
     else:        
-        df.to_csv(fil, header=True, index=False)
-
+        df[['date','winner','home_team','away_team','prediction','away','home']].to_csv(fil, header=True, index=False)
 
 
 if __name__ == '__main__':
