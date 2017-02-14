@@ -83,3 +83,26 @@ date,winner,home_team,away_team,prediction,away,home
 2017-02-10,0,Phoenix Suns,Chicago Bulls,0.404156236969,Bulls,Suns
 2017-02-10,0,Sacramento Kings,Atlanta Hawks,0.506341480897,Hawks,Kings
 2017-02-10,0,Washington Wizards,Indiana Pacers,0.653373860779,Pacers,Wizards
+2017-02-11,0,Charlotte Hornets,Los Angeles Clippers,0.468423873475,Clippers,Hornets
+2017-02-11,0,Cleveland Cavaliers,Denver Nuggets,0.796944739739,Nuggets,Cavaliers
+2017-02-11,0,Dallas Mavericks,Orlando Magic,0.73362550905,Magic,Mavericks
+2017-02-11,0,Houston Rockets,Phoenix Suns,0.891582858486,Suns,Rockets
+2017-02-11,0,Indiana Pacers,Milwaukee Bucks,0.674024704287,Bucks,Pacers
+2017-02-11,0,Oklahoma City Thunder,Golden State Warriors,0.293034362939,Warriors,Thunder
+2017-02-11,0,Philadelphia 76ers,Miami Heat,0.393673373728,Heat,76ers
+2017-02-11,0,Utah Jazz,Boston Celtics,0.639481158514,Celtics,Jazz
+2017-02-12,0,Minnesota Timberwolves,Chicago Bulls,0.550575492638,Bulls,Timberwolves
+2017-02-12,0,New York Knicks,San Antonio Spurs,0.223166554601,Spurs,Knicks
+2017-02-12,0,Sacramento Kings,New Orleans Pelicans,0.630421369751,Pelicans,Kings
+2017-02-12,0,Toronto Raptors,Detroit Pistons,0.742910730114,Pistons,Raptors
+2017-02-13,0,Brooklyn Nets,Memphis Grizzlies,0.242924803616,Grizzlies,Nets
+2017-02-13,0,Charlotte Hornets,Philadelphia 76ers,0.776743207413,76ers,Hornets
+2017-02-13,0,Dallas Mavericks,Boston Celtics,0.466267980877,Celtics,Mavericks
+2017-02-13,0,Denver Nuggets,Golden State Warriors,0.185587730272,Warriors,Nuggets
+2017-02-13,0,Indiana Pacers,San Antonio Spurs,0.375228758272,Spurs,Pacers
+2017-02-13,0,Miami Heat,Orlando Magic,0.775748877943,Magic,Heat
+2017-02-13,0,Milwaukee Bucks,Detroit Pistons,0.61091846209,Pistons,Bucks
+2017-02-13,0,Phoenix Suns,New Orleans Pelicans,0.549404325598,Pelicans,Suns
+2017-02-13,0,Portland Trail Blazers,Atlanta Hawks,0.589657891574,Hawks,Blazers
+2017-02-13,0,Utah Jazz,Los Angeles Clippers,0.611365742758,Clippers,Jazz
+2017-02-13,0,Washington Wizards,Oklahoma City Thunder,0.670519497465,Thunder,Wizards

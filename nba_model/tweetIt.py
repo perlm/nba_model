@@ -22,14 +22,21 @@ def tweetProb(df):
 
         if len(tweet)>80:
 		tweet += tweetend
-	        print "Tweet Sent:\n%s" % (str(tweet))
-	        t.statuses.update(status=tweet)
+	        try:
+			t.statuses.update(status=tweet)
+	        	print "Tweet Sent:\n%s" % (str(tweet))
+		except:
+	        	print "Tweet Failed:\n%s" % (str(tweet))
+		
 		tweet = tweetstart
 
     if len(tweet)>len(tweetstart):
 	tweet += tweetend
-	print "Tweet Sent:\n%s" % (str(tweet))
-	t.statuses.update(status=tweet)
+	try:
+		t.statuses.update(status=tweet)
+		print "Tweet Sent:\n%s" % (str(tweet))
+	except:
+		print "Tweet Failed:\n%s" % (str(tweet))
 
 
     
