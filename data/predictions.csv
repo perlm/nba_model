@@ -106,3 +106,61 @@ date,winner,home_team,away_team,prediction,away,home
 2017-02-13,0,Portland Trail Blazers,Atlanta Hawks,0.589657891574,Hawks,Blazers
 2017-02-13,0,Utah Jazz,Los Angeles Clippers,0.611365742758,Clippers,Jazz
 2017-02-13,0,Washington Wizards,Oklahoma City Thunder,0.670519497465,Thunder,Wizards
+2017-02-14,0,Chicago Bulls,Toronto Raptors,0.445778465599,Raptors,Bulls
+2017-02-14,0,Los Angeles Lakers,Sacramento Kings,0.497712678374,Kings,Lakers
+2017-02-14,0,Minnesota Timberwolves,Cleveland Cavaliers,0.350593833496,Cavaliers,Timberwolves
+2017-02-15,0,Boston Celtics,Philadelphia 76ers,0.849107143499,76ers,Celtics
+2017-02-15,0,Brooklyn Nets,Milwaukee Bucks,0.330206227865,Bucks,Nets
+2017-02-15,0,Cleveland Cavaliers,Indiana Pacers,0.752841567518,Pacers,Cavaliers
+2017-02-15,0,Denver Nuggets,Minnesota Timberwolves,0.672154733682,Timberwolves,Nuggets
+2017-02-15,0,Detroit Pistons,Dallas Mavericks,0.623109848422,Mavericks,Pistons
+2017-02-15,0,Golden State Warriors,Sacramento Kings,0.922597902968,Kings,Warriors
+2017-02-15,0,Houston Rockets,Miami Heat,0.781881031131,Heat,Rockets
+2017-02-15,0,Los Angeles Clippers,Atlanta Hawks,0.700404753302,Hawks,Clippers
+2017-02-15,0,Memphis Grizzlies,New Orleans Pelicans,0.754420781334,Pelicans,Grizzlies
+2017-02-15,0,Oklahoma City Thunder,New York Knicks,0.720379319323,Knicks,Thunder
+2017-02-15,0,Orlando Magic,San Antonio Spurs,0.190137269245,Spurs,Magic
+2017-02-15,0,Phoenix Suns,Los Angeles Lakers,0.633532678919,Lakers,Suns
+2017-02-15,0,Toronto Raptors,Charlotte Hornets,0.711027523724,Hornets,Raptors
+2017-02-15,0,Utah Jazz,Portland Trail Blazers,0.745880941124,Blazers,Jazz
+2017-02-16,0,Chicago Bulls,Boston Celtics,0.494507482272,Celtics,Bulls
+2017-02-16,0,Indiana Pacers,Washington Wizards,0.462143911337,Wizards,Pacers
+2017-02-23,0,Cleveland Cavaliers,New York Knicks,0.841207955505,Knicks,Cavaliers
+2017-02-23,0,Detroit Pistons,Charlotte Hornets,0.622491311038,Hornets,Pistons
+2017-02-23,0,Golden State Warriors,Los Angeles Clippers,0.825876131573,Clippers,Warriors
+2017-02-23,0,New Orleans Pelicans,Houston Rockets,0.331211193252,Rockets,Pelicans
+2017-02-23,0,Orlando Magic,Portland Trail Blazers,0.472217655319,Blazers,Magic
+2017-02-23,0,Sacramento Kings,Denver Nuggets,0.571305380051,Nuggets,Kings
+2017-02-24,0,Atlanta Hawks,Miami Heat,0.609504041878,Heat,Hawks
+2017-02-24,0,Chicago Bulls,Phoenix Suns,0.731346757906,Suns,Bulls
+2017-02-24,0,Denver Nuggets,Brooklyn Nets,0.792022821555,Nets,Nuggets
+2017-02-24,0,Indiana Pacers,Memphis Grizzlies,0.49136698024,Grizzlies,Pacers
+2017-02-24,0,Los Angeles Clippers,San Antonio Spurs,0.400582503384,Spurs,Clippers
+2017-02-24,0,Milwaukee Bucks,Utah Jazz,0.442250937305,Jazz,Bucks
+2017-02-24,0,Minnesota Timberwolves,Dallas Mavericks,0.589858611511,Mavericks,Timberwolves
+2017-02-24,0,Oklahoma City Thunder,Los Angeles Lakers,0.805464996535,Lakers,Thunder
+2017-02-24,0,Philadelphia 76ers,Washington Wizards,0.340197007899,Wizards,76ers
+2017-02-24,0,Toronto Raptors,Boston Celtics,0.646405207109,Celtics,Raptors
+2017-02-25,0,Cleveland Cavaliers,Chicago Bulls,0.805809627677,Bulls,Cavaliers
+2017-02-25,0,Dallas Mavericks,New Orleans Pelicans,0.639571329924,Pelicans,Mavericks
+2017-02-25,0,Golden State Warriors,Brooklyn Nets,0.972406100745,Nets,Warriors
+2017-02-25,0,Houston Rockets,Minnesota Timberwolves,0.829925770212,Timberwolves,Rockets
+2017-02-25,0,Miami Heat,Indiana Pacers,0.628780419034,Pacers,Heat
+2017-02-25,0,New York Knicks,Philadelphia 76ers,0.709978039946,76ers,Knicks
+2017-02-25,0,Orlando Magic,Atlanta Hawks,0.442478455774,Hawks,Magic
+2017-02-25,0,Sacramento Kings,Charlotte Hornets,0.574398681625,Hornets,Kings
+2017-02-26,0,Denver Nuggets,Memphis Grizzlies,0.514980160488,Grizzlies,Nuggets
+2017-02-26,0,Detroit Pistons,Boston Celtics,0.554351741272,Celtics,Pistons
+2017-02-26,0,Los Angeles Clippers,Charlotte Hornets,0.759167547418,Hornets,Clippers
+2017-02-26,0,Los Angeles Lakers,San Antonio Spurs,0.158546409215,Spurs,Lakers
+2017-02-26,0,Milwaukee Bucks,Phoenix Suns,0.733978397511,Suns,Bucks
+2017-02-26,0,Oklahoma City Thunder,New Orleans Pelicans,0.778426365602,Pelicans,Thunder
+2017-02-26,0,Toronto Raptors,Portland Trail Blazers,0.748513863304,Blazers,Raptors
+2017-02-26,0,Washington Wizards,Utah Jazz,0.551629024795,Jazz,Wizards
+2017-02-27,0,Boston Celtics,Atlanta Hawks,0.690634986684,Hawks,Celtics
+2017-02-27,0,Cleveland Cavaliers,Milwaukee Bucks,0.807935513583,Bucks,Cavaliers
+2017-02-27,0,Dallas Mavericks,Miami Heat,0.53991742444,Heat,Mavericks
+2017-02-27,0,Houston Rockets,Indiana Pacers,0.796982607139,Pacers,Rockets
+2017-02-27,0,New York Knicks,Toronto Raptors,0.397996163347,Raptors,Knicks
+2017-02-27,0,Philadelphia 76ers,Golden State Warriors,0.107600965056,Warriors,76ers
+2017-02-27,0,Sacramento Kings,Minnesota Timberwolves,0.591477166539,Timberwolves,Kings

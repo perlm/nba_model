@@ -39,7 +39,7 @@ def validate():
 	df = df.round({'prediction': 1})
 	forcalibration = df['winner_y'].groupby(df['prediction']).mean().reset_index()
 	
-	plot1, ax =plt.subplots(figsize=(7, 5))
+	plot1, ax =plt.subplots(figsize=(7.5,5))
 	plt.plot(forcalibration['prediction'],forcalibration['winner_y'],marker='o', linestyle='-', color='b')
 	plt.ylabel('Actual Win Frequency')
 	plt.xlabel('Predicted Win Probability')
@@ -47,19 +47,9 @@ def validate():
 
 	plt.plot(np.array([0,1]),np.array([0,1]),linestyle='-',color='k')
 
-	#plt.show()
-	pdf.savefig(plot1)
+	pdf.savefig()
 	plt.close()
 	
-	#plot1=ggplot(forcalibration,aes(x="prediction",y="winner_y")) + \
-	#geom_point(size=100) + \
-	#xlab('Predicted Win Probability') +	ylab('Actual Win Frequency') + \
-	#geom_abline(intercept=0,slope=1) + \
-	#scale_y_continuous(limits=[0,1])+scale_x_continuous(limits=[0,1]) +\
-	#ggtitle('NBA Prediction Validation.\nDate:{0} Samples:{1}\nAUC:{2} ACC:{3}'.format(maxDate,preds,round(auc,2),round(accuracy,2)))
-	
-	#ggsave(p, "{}/nba_model/docs/validation_plot.png".format(os.path.expanduser("~")))
-	#p.save("{}/nba_model/docs/validation_plot.png".format(os.path.expanduser("~")))
 	
 	#figure 2
 	df['correct'] = 0
@@ -70,26 +60,18 @@ def validate():
 	forplot2 = forplot2.reset_index()
 	forplot2['date'] = pd.to_datetime(forplot2['date'])
     
-	#plot2=ggplot(forplot2,aes(x="date",y="correct")) + \
-	#geom_point(size=100) + geom_line(size=3) + \
-	#xlab('Date') +	ylab('Model Accuracy') + \
-	#scale_y_continuous(limits=[0,1])+\
-	#scale_x_date(labels='%m/%d/%Y') +\
-	#ggtitle('NBA model validation by day')
-    
-	plot2, ax =plt.subplots(figsize=(7, 5))
+	plot2, ax =plt.subplots(figsize=(7.5,5))
 	plt.plot(forplot2['date'],forplot2['correct'],marker='o', linestyle='-', color='b')
 	
 	days = mdates.DayLocator()
-	ax.xaxis.set_major_locator(days)
+	#ax.xaxis.set_major_locator(days)
 	ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
 	plot2.autofmt_xdate()
 
 	plt.ylabel('Model Accuracy')
 	plt.xlabel('Date')
 	plt.title('NBA model validation by day')
-	#plt.show()
-	pdf.savefig(plot2)
+	pdf.savefig()
 	plt.close()
 
 	pdf.close()
