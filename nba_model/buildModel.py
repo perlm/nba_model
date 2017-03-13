@@ -134,14 +134,14 @@ def predict(X_scaled,model):
 
 def readRawFiles():
 	# read in all csv's and return pandas dataframe
-	filenames = glob.glob("{}/nba_model/data/games_*.csv".format(os.path.expanduser("~")))
+	filenames = glob.glob("{}/nba_model/raw/games_*.csv".format(os.path.expanduser("~")))
 	df = pd.concat([pd.read_csv(f,delimiter=',',header=0) for f in filenames], ignore_index=True)
 	return df
 	
 
 def readRawPredictionFile():
 	# read in csv's for prediction set and return pandas dataframe
-	f = "{}/nba_model/data/predict_games.csv".format(os.path.expanduser("~"))
+	f = "{}/nba_model/raw/predict_games.csv".format(os.path.expanduser("~"))
 	df = pd.read_csv(f,delimiter=',',header=0)
 	return df
 

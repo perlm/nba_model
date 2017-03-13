@@ -19,7 +19,7 @@ def validate():
 	# matplotlib has multiplot, ggplot doesn't
 	pdf = PdfPages("{}/nba_model/docs/validation_plots.pdf".format(os.path.expanduser("~")))
     
-	filename = "{}/nba_model/data/games_2017.csv".format(os.path.expanduser("~"))
+	filename = "{}/nba_model/raw/games_2017.csv".format(os.path.expanduser("~"))
 	actuals = pd.read_csv(filename,delimiter=',',header=0)
 	filename = '{}/nba_model/data/predictions.csv'.format(os.path.expanduser("~"))
 	predictions = pd.read_csv(filename,delimiter=',',header=0)

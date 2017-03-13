@@ -5,11 +5,11 @@ from .validation import *
 import datetime, os
 
 
-##
+#######################
 # This is the master script which will call functions from the other scripts.
 # Currently setup to get new data, scrape, model, and publish.
-# will set to run on cron.
-## 
+# set to run on cron.
+########################
 
 
 def main():
@@ -27,18 +27,17 @@ def main():
 	X, X_scaled, Y, scaler,X_fix = processData(df)
 	model_lr = buildLogisticModel(X_scaled,Y,X_fix,optimize=False)
 
-	##########
-	# pull in data for predictions
+	####################
+	# pull in data for predictions.
 	df_predict = readRawPredictionFile()
 	df = addrows(df,df_predict)
 	X, X_scaled, Y, scaler,X_fix = processData(df,scaler)
 	y_probs_lr = predict(X_scaled,model_lr)
-	new_df = extract_new_predictions(df,y_probs_lr)
 
 	##########
 	# tweet it!
-	if len(new_df)>0:
-		tweetProb(new_df)
+	if len(df.loc[(df['date']==datetime.date.today())])>0:
+		tweetProb(extract_new_predictions(df,y_probs_lr))
 		store_predictions(df,y_probs_lr)
 
 	##########
