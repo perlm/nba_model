@@ -1,0 +1,9 @@
+numpy==1.11.3
+pandas==0.19.2
+sklearn==0.18.1
+requests==2.12.1
+bs4==0.0.1
+configparser==3.5.0
+twitter==1.17.1
+matplotlib==1.5.3
+
