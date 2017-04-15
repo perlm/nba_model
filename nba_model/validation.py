@@ -32,7 +32,7 @@ def validate():
 	
 	#print(metrics.classification_report(df['winner_y'], df['prediction_class']))
 	accuracy = metrics.accuracy_score(df['winner_y'], df['prediction_class'])
-	auc = metrics.roc_auc_score(df['winner_y'], df['prediction_class'])
+	auc = metrics.roc_auc_score(df['winner_y'], df['prediction'])
 	preds = len(df)
 	maxDate = max(allData['date'].loc[(allData['winner_y'].isin([0,1]))])
 
