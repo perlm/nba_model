@@ -256,6 +256,7 @@ def processData(df,scaler=None):
     #X = df[['cumpointdiff_diff','winrate_diff','win10_diff','daysoff_away_bucket','daysoff_home_bucket','last_season_diff','east_west']]
     X = df[['cumpointdiff_diff','winrate_diff','win10_diff','daysoff_diff_bucket','last_season_diff','east_west']]
     
+    
     # if using multi-level factors need to do this:
     X_fix = pd.get_dummies(X)
     # X_fix = X
@@ -308,5 +309,6 @@ if __name__ == '__main__':
 
     #model_rf = buildRandomForest(X_scaled,Y,X_fix)
     #y_probs_rf = predict(X_scaled,model_rf)
+
 
 

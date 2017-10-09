@@ -35,7 +35,7 @@ def getGames(year,predicting=False):
         
         ######################3
         # remove games not yet played
-        if year==2017 and not predicting:
+        if year==2018 and not predicting:
             d = d.loc[(d['home_points']!=0)]
 
         if df is None:
@@ -43,7 +43,7 @@ def getGames(year,predicting=False):
         else:
             df = df.append(d,ignore_index=True)
     
-    if year not in (2012,2017):
+    if year not in (2012,2018):
 	    assert (len(df)>(82*30./2)), 'Not all games found for year={0}!'.format(year)
     
     ####################
@@ -76,7 +76,7 @@ def create_features(df):
     # define some variables from the perspective of each team. then join them back to df.
     # I want the features to describe the team heading into that game, rather than after that game.
     teams = df.home_team.unique().tolist()
-    assert (len(teams)==30), 'wrong number of teams!'
+    assert (len(teams)==30), 'wrong number of teams! Found {0}'.format(len(teams))
     
     
     for iii, t in enumerate(teams):
@@ -201,33 +201,39 @@ def parse_games(r):
     return df
 
 
-def get_all_data_for_modeling():
+def get_all_data_for_modeling(YEAR=None):
     ####################
     # get data for modeling!
     # scrapes, manipulated df, and then writes to csv.
     #################
     
-    for year in xrange(2007,2018):
-        df = getGames(year)
-        df.to_csv('{0}/nba_model/raw/games_{1}.csv'.format(os.path.expanduser("~"),year), index=False)
+    if YEAR is None:
+        for year in xrange(2007,2018):
+            df = getGames(year)
+            df.to_csv('{0}/nba_model/raw/games_{1}.csv'.format(os.path.expanduser("~"),year), index=False)
+    else:
+            df = getGames(YEAR)
+            df.to_csv('{0}/nba_model/raw/games_{1}.csv'.format(os.path.expanduser("~"),YEAR), index=False)
+
 
 def get_new_data_for_modeling():
     ####################
     # get data for modeling!
     # scrapes, manipulated df, and then writes to csv.
-    # only need 2017 season, since other season's aren't changing
+    # only need 2018 season, since other season's aren't changing
     #################
     
-    year=2017
+    year=2018
     df = getGames(year)
     df.to_csv('{0}/nba_model/raw/games_{1}.csv'.format(os.path.expanduser("~"),year), index=False)
 
 def get_data_for_predicting():
-    df = getGames(2017,predicting=True)
+    df = getGames(2018,predicting=True)
     df.to_csv('{0}/nba_model/raw/predict_games.csv'.format(os.path.expanduser("~")), index=False)
 
 if __name__ == '__main__':
-    get_all_data_for_modeling()
-    get_new_data_for_modeling()
-    get_data_for_predicting()
+    get_all_data_for_modeling(2017)
+    #get_all_data_for_modeling()
+    #get_new_data_for_modeling()
+    #get_data_for_predicting()
 
