@@ -46,6 +46,11 @@ def main():
         #        pickle.dump(nba_scaler, f)
         #s3 = boto3.resource('s3')
         #s3.meta.client.upload_file("{}/nba_model/model_pickles/nba_scaler.pickle".format(os.path.expanduser("~")), BUCKET_NAME, 'nba_scaler.pickle')
+        #BUCKET_NAME = 'jeopardydata' # replace with your bucket name
+        #with bz2.BZ2File("{}/nba_model/model_pickles/nba_model.pickle".format(os.path.expanduser("~")),"w") as f:
+        #        pickle.dump(model_lr, f)
+        #s3 = boto3.resource('s3')
+        #s3.meta.client.upload_file("{}/nba_model/model_pickles/nba_model.pickle".format(os.path.expanduser("~")), BUCKET_NAME, 'nba_model.pickle')
 
 
 	y_probs_lr = predict(X_scaled,model_lr)
