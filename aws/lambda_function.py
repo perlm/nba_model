@@ -14,7 +14,10 @@ def lambda_handler(event, context):
 	unparsed = getTodaysGamesAWS(2018)
 	with bz2.BZ2File("/tmp/nba_unparsed.pickle","w") as f:pickle.dump(unparsed, f)
 	s3.meta.client.upload_file('/tmp/nba_unparsed.pickle', BUCKET_NAME, 'nba_unparsed.pickle')
-	return unparsed
+	#return unparsed
+        #return BeautifulSoup(unparsed.text, 'html.parser')
+	return True
+
 
 
 def getSoup(url):
