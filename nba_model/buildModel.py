@@ -182,6 +182,7 @@ def construct_features(df):
     df.loc[((df['date'] > '2014-08-01') & (df['date'] < '2015-08-01')), 'season'] = 2014
     df.loc[((df['date'] > '2015-08-01') & (df['date'] < '2016-08-01')), 'season'] = 2015
     df.loc[((df['date'] > '2016-08-01') & (df['date'] < '2017-08-01')), 'season'] = 2016
+    df.loc[((df['date'] > '2017-08-01') & (df['date'] < '2018-08-01')), 'season'] = 2017
 
     # I want previous season record.
     # I'm going to cheat a bit and use record as of last home game of season for the home team and away for the away team.

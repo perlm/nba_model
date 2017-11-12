@@ -14,7 +14,8 @@ def tweetProb(df):
     t = twitter.Twitter(auth=twitter.OAuth(token=config.get('twitter','token'), token_secret=config.get('twitter','token_secret'), consumer_key=config.get('twitter','consumer_key'), consumer_secret=config.get('twitter','consumer_secret')))
     
     tweetstart = '#NBA home team win probs:\n'
-    tweetend = 'https://hastydata.wordpress.com/2017/01/21/nba-win-model/'
+    #tweetend = 'https://hastydata.wordpress.com/2017/01/21/nba-win-model/' #include link
+    tweetend = ''
     
     tweet = tweetstart
     for index, row in df.iterrows():
